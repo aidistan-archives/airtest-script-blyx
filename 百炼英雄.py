@@ -80,52 +80,7 @@ def fight_for_mines(): # 153 mines in 1'15"
     swipe([525, 925], vector=[0.005, 0.05], duration=2)
     sleep(2)
 
-# 理论效率更高，但在连续弹出活动页面时效率偏低
-def fight_for_coins_by_reloading(): # $50 in 1‘52“
-    try:
-        touch(Template(r"tpl1719452527348.png", target_pos=7, record_pos=(0.115, -0.225), resolution=(996, 1856)))
-        touch(Template(r"tpl1719291686110.png", record_pos=(0.166, -0.228), resolution=(1000, 1863)))
-        wait(Template(r"tpl1719136215820.png", record_pos=(0.077, -0.122), resolution=(1000, 1863)))
-        swipe([525, 925], vector=[0.02, -0.02], duration=0.6)
-        swipe([525, 925], vector=[0, -0.05], duration=1)
-        sleep(1) # 独眼食人魔
-        swipe([525, 925], vector=[0, 0.05], duration=1)
-        swipe([525, 925], vector=[-0.02, 0.02], duration=0.6)
-
-        touch(Template(r"tpl1719136215820.png", record_pos=(0.077, -0.122), resolution=(1000, 1863)))
-        touch(Template(r"tpl1719293106569.png", record_pos=(-0.262, -0.202), resolution=(1002, 1865)))
-        touch(Template(r"tpl1719293144468.png", record_pos=(0.165, -0.04), resolution=(1002, 1865)))
-        wait(Template(r"tpl1719136215820.png", record_pos=(0.077, -0.122), resolution=(1000, 1863)))
-        swipe([525, 925], vector=[0.09, -0.018], duration=1.5)
-        sleep(2) # 树精长老
-        swipe([525, 925], vector=[-0.09, 0.018], duration=1.5)
-
-        touch(Template(r"tpl1719136215820.png", record_pos=(0.077, -0.122), resolution=(1000, 1863)))
-        touch(Template(r"tpl1719291958503.png", record_pos=(-0.263, -0.329), resolution=(1000, 1863)))
-        touch(Template(r"tpl1719291989573.png", record_pos=(0.164, -0.42), resolution=(1000, 1863)))
-        wait(Template(r"tpl1719136215820.png", record_pos=(0.077, -0.122), resolution=(1000, 1863)))
-        swipe([525, 925], vector=[0.05, -0.01], duration=0.6)
-        sleep(1) # 树精领主
-        swipe([525, 925], vector=[-0.05, 0.01], duration=0.6)
-
-        touch(Template(r"tpl1719136215820.png", record_pos=(0.077, -0.122), resolution=(1000, 1863)))
-        touch(Template(r"tpl1719292222638.png", record_pos=(0.163, -0.227), resolution=(1000, 1863)))
-        wait(Template(r"tpl1719136215820.png", record_pos=(0.077, -0.122), resolution=(1000, 1863)))
-        swipe([525, 925], vector=[-0.01, -0.07], duration=2.5)
-        swipe([525, 925], vector=[0.05, -0.05], duration=0.5)
-        swipe([525, 925], vector=[-0.023, -0.03], duration=2.1)
-        sleep(1.5) # 疯牛魔王
-        swipe([525, 925], vector=[-0.02, -0.032], duration=7)
-        sleep(1.5) # 火焰石像
-
-    except:
-        sleep(1)
-
-    finally:
-        reload()
-
-# 理论效率偏低，但胜在稳定性强
-def fight_for_coins_by_transporting(): # $50 in 1‘56“
+def fight_for_coins(): # $50 in 1‘56“
     try:
         touch(Template(r"tpl1719452527348.png", target_pos=7, record_pos=(0.115, -0.225), resolution=(996, 1856)))
         touch(Template(r"tpl1719291686110.png", record_pos=(0.166, -0.228), resolution=(1000, 1863)))
@@ -174,4 +129,4 @@ def fight_for_coins_by_transporting(): # $50 in 1‘56“
         reload()
 
 while True:
-    fight_for_coins_by_reloading()
+    fight_for_coins()
