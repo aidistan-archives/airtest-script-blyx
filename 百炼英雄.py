@@ -20,9 +20,11 @@ def reload():
         sleep(1)
 
     finally:
-        while not exists(Template(r"tpl1719452527348.png", target_pos=7, record_pos=(0.115, -0.225), resolution=(996, 1856))):
+        time = 0
+        while time < 5 and not exists(Template(r"tpl1719452527348.png", target_pos=7, record_pos=(0.115, -0.225), resolution=(996, 1856))):
             touch([525, 1800]) # 点击底部空白关闭页面
             sleep(1)
+            time += 1
 
 def transport(place):
     if exists(Template(r"tpl1718985018429.png", record_pos=(0.401, 0.667), resolution=(1248, 2266))): # 8’
