@@ -141,5 +141,15 @@ def fight_for_coins(): # $50 in 1‘56“
     except:
         reload()
 
-while True:
-    fight_for_coins()
+# while True:
+#     fight_for_mines()
+#     fight_for_coins()
+
+# while True:
+#     try:
+#         go_for_idle("燃烧平原")
+#         while True:
+#             sleep(60)
+#             assert_not_exists(Template(r"tpl1727165489621.png", record_pos=(0.0, 0.213), resolution=(1000, 1864)))
+#     except:
+#         reload()
