@@ -14,7 +14,7 @@ def reload():
         wait(Template(r"tpl1719452527348.png", target_pos=7, record_pos=(0.115, -0.225), resolution=(996, 1856)))
 
         # 等待一会，以防活动页面延迟弹出
-        sleep(1)
+        sleep(3)
 
     except:
         sleep(1)
@@ -58,8 +58,19 @@ def transport(place):
     elif place == "王座大厅":
         touch(Template(r"tpl1719316570625.png", record_pos=(-0.265, 0.043), resolution=(1000, 1863)))
         touch(Template(r"tpl1719316585336.png", record_pos=(0.166, -0.416), resolution=(1000, 1863)))
+    elif place == "炽热哨站":
+        touch(Template(r"tpl1727147937752.png", record_pos=(-0.263, 0.292), resolution=(1000, 1863)))
+        touch(Template(r"tpl1727147946547.png", record_pos=(0.164, -0.229), resolution=(1000, 1863)))
 
     wait(Template(r"tpl1719136215820.png", record_pos=(0.077, -0.122), resolution=(1000, 1863)))
+
+def go_for_idle(place): # 前往挂机地点
+    if place == "燃烧平原":
+        transport("炽热哨站")
+        swipe([525, 925], vector=[0.012, -0.007], duration=1)
+        swipe([525, 925], vector=[0.025,  0.040], duration=4)
+        swipe([525, 925], vector=[0.048, -0.018], duration=4.3)
+        swipe([525, 925], vector=[0.048,  0.018], duration=13)
 
 def fight_for_mines(): # 153 mines in 1'15"
     transport("北风营地")
