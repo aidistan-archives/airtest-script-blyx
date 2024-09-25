@@ -29,6 +29,8 @@ def reload():
 def transport(place):
     if exists(Template(r"tpl1718985018429.png", record_pos=(0.401, 0.667), resolution=(1248, 2266))): # 8’
         touch(Template(r"tpl1718985018429.png", record_pos=(0.401, 0.667), resolution=(1248, 2266)))
+        if exists(Template(r"tpl1727263132382.png", record_pos=(0.173, 0.21), resolution=(1075, 1997))):
+            touch(Template(r"tpl1727263132382.png", record_pos=(0.173, 0.21), resolution=(1075, 1997)))
         wait(Template(r"tpl1719452527348.png", record_pos=(0.115, -0.225), resolution=(996, 1856)))
 
     touch(Template(r"tpl1719452527348.png", target_pos=7, record_pos=(0.115, -0.225), resolution=(996, 1856)))
@@ -58,6 +60,9 @@ def transport(place):
     elif place == "王座大厅":
         touch(Template(r"tpl1719316570625.png", record_pos=(-0.265, 0.043), resolution=(1000, 1863)))
         touch(Template(r"tpl1719316585336.png", record_pos=(0.166, -0.416), resolution=(1000, 1863)))
+    elif place == "冰冠禁区":
+        touch(Template(r"tpl1719316570625.png", record_pos=(-0.265, 0.043), resolution=(1000, 1863)))
+        touch(Template(r"tpl1727186409080.png", record_pos=(0.161, -0.038), resolution=(1000, 1863)))
     elif place == "炽热哨站":
         touch(Template(r"tpl1727147937752.png", record_pos=(-0.263, 0.292), resolution=(1000, 1863)))
         touch(Template(r"tpl1727147946547.png", record_pos=(0.164, -0.229), resolution=(1000, 1863)))
@@ -141,15 +146,69 @@ def fight_for_coins(): # $50 in 1‘56“
     except:
         reload()
 
-# while True:
-#     fight_for_mines()
-#     fight_for_coins()
+def fight_for_exps():
+    transport("冰冠禁区")
+    swipe([525, 925], vector=[-0.048, -0.016], duration=1)
+    sleep(2)
 
-# while True:
-#     try:
-#         go_for_idle("燃烧平原")
-#         while True:
-#             sleep(60)
-#             assert_not_exists(Template(r"tpl1727165489621.png", record_pos=(0.0, 0.213), resolution=(1000, 1864)))
-#     except:
-#         reload()
+    swipe([525, 925], vector=[ 0.048, -0.016], duration=3)
+    sleep(2)
+    swipe([525, 925], vector=[ 0.048, -0.016], duration=4)
+    sleep(2)
+
+    swipe([525, 925], vector=[ 0.048,  0.016], duration=4)
+    sleep(2)
+    swipe([525, 925], vector=[ 0.048,  0.016], duration=3.5)
+    sleep(2)
+    swipe([525, 925], vector=[ 0.048,  0.016], duration=4)
+    sleep(2)
+    swipe([525, 925], vector=[ 0.048,  0.016], duration=5)
+    sleep(2)
+
+    swipe([525, 925], vector=[-0.048,  0.016], duration=3)
+    sleep(2)
+    swipe([525, 925], vector=[-0.048,  0.016], duration=5)
+    sleep(2)
+    swipe([525, 925], vector=[-0.048,  0.016], duration=2)
+    sleep(2)
+    swipe([525, 925], vector=[-0.048,  0.016], duration=3.5)
+    sleep(2)
+    swipe([525, 925], vector=[-0.048,  0.016], duration=1)
+    # sleep(2)
+
+    # swipe([525, 925], vector=[-0.048, -0.016], duration=3)
+    # sleep(2)
+    # swipe([525, 925], vector=[-0.048, -0.016], duration=6)
+    # sleep(2)
+    # swipe([525, 925], vector=[-0.048, -0.016], duration=4)
+    # sleep(2)
+    # swipe([525, 925], vector=[-0.048, -0.016], duration=3.5)
+    # sleep(2)
+
+    # swipe([525, 925], vector=[ 0.048, -0.016], duration=4)
+    # sleep(2)
+    # swipe([525, 925], vector=[ 0.048, -0.016], duration=2)
+    # sleep(2)
+    # swipe([525, 925], vector=[ 0.048, -0.016], duration=2)
+    sleep(2)
+
+# mode = "mines"
+mode = "coins"
+# mode = "exps"
+# mode = "燃烧平原"
+
+while True:
+    if mode == "mines":
+        fight_for_mines()
+    elif mode == "coins":
+        fight_for_coins()
+    elif mode == "exps":
+        fight_for_exps()
+    else:
+        try:
+            go_for_idle(mode)
+            while True:
+                sleep(60)
+                assert_not_exists(Template(r"tpl1727263132382.png", record_pos=(0.173, 0.21), resolution=(1075, 1997)))
+        except:
+            reload()
